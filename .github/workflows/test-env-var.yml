@@ -1,0 +1,19 @@
+name: Test ATTEMPT Env Var
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Ambiente'
+        required: true
+        default: 'devl'
+
+jobs:
+  test-var:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Echo ATTEMPT variable
+        run: echo "O valor de ATTEMPT é: $ATTEMPT"
+        env:
+          ATTEMPT: ${{ vars.ATTEMPT }}
