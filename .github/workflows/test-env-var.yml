@@ -14,6 +14,6 @@ jobs:
     environment: ${{ github.event.inputs.environment }}
     steps:
       - name: Echo ATTEMPT variable
-        run: echo "O valor de ATTEMPT é: $ATTEMPT"
+        run: echo "O valor de ATTEMPT é:$ATTEMPT"
         env:
           ATTEMPT: ${{ vars.ATTEMPT }}
